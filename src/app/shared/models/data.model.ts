@@ -1,12 +1,11 @@
 export interface IData {
     day: string;
     hour: number;
-    handlingFunction: string;
-    fullTimeEmployees: number;
-    partTimeEmployees: number;
-    totalEmployees: number;
-    fullTimeCost: number;
-    partTimeCost: number;
-    totalCost: number;
-    totalDayCost: number;
+    handling_function: string;
+    full_time: number;
+    part_time: number;
+    total_employees: number;
+    full_time_cost: number;
+    part_time_cost: number;
+    total_cost: number;
 }

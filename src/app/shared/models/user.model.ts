@@ -1,6 +1,6 @@
 export interface IUser {
-    user: string;
+    name: string;
+    role?: number;
     password?: string;
-    role?: string;
     token?: string;
 }
