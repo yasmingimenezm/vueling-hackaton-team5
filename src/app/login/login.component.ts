@@ -43,8 +43,30 @@ login(){
   if (this.loginForm.valid){
     
     const { username, password } = this.loginForm.value
+    let userName = this.loginForm.value.username;
+    let userPassword = this.loginForm.value.password;
     
-    this.authservice.login( username, password )
+
+    if (userName === 'admin' && userPassword === 'admin'){
+      Swal.fire({
+        icon: 'success',
+        title: 'Welcome to Vueling',
+        showConfirmButton: false,
+        timer: 1500
+      })
+      this.router.navigateByUrl('datatable');
+    } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          showConfirmButton: false,
+          timer: 1500
+        })
+        this.loginForm.markAllAsTouched()
+    }
+    
+   /*  this.authservice.login( username, password )
     .subscribe( ok => {
       
       if( ok === true ){
@@ -55,8 +77,9 @@ login(){
           showConfirmButton: false,
           timer: 1500
         })
+        
+        
       } else {
-
         this.error = ok;
         Swal.fire({
           icon: 'error',
@@ -67,7 +90,7 @@ login(){
         })
         this.loginForm.markAllAsTouched()
       }
-    })}
+    }) */}
 
 }
 
