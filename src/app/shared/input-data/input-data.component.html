@@ -1,0 +1,36 @@
+
+    
+    
+    <div class="container-fluid">
+
+            <form [formGroup]="dataForm" (ngSubmit)="dataInput()"  class="d-flex"> 
+        
+                <div>
+                    
+                </div>
+                <div class="form-group col">
+                  <input required=""  name="shiftDuration" id="shiftDuration" type="text" formControlName="shiftDuration" placeholder="shiftDuration" class="form-control">
+    
+                </div>
+    
+                <div class="form-group col">
+                  <input required="" name="hourlyCostHandling" id="hourlyCostHandling" type="hourlyCostHandling" formControlName="hourlyCostHandling" placeholder="hourlyCostHandling"  class="form-control">
+                </div>
+    
+                <div class="form-group col">
+                  <input required="" name="schedule" id="schedule" type="schedule" formControlName="schedule" placeholder="schedule"  class="form-control">
+                </div>
+    
+                <br>
+    
+    
+                <div class="form-group col">
+                  <button class="btn btn-secondary" type="submit">Login</button>
+    
+                </div>
+              </form>
+
+        </div>
+
+
+             
