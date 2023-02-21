@@ -2,10 +2,9 @@
 
 import { Component, OnInit } from '@angular/core';
 import { ChartData, ChartEvent, ChartType } from 'chart.js';
-import { GraphicsService } from './graphics.service';
 import { DataService } from '../core/data.service';
-import { filter, from, groupBy, map, mergeMap, reduce, take, toArray } from 'rxjs';
-import { dataTable } from '../interfaces';
+import { forkJoin } from 'rxjs';
+
 
 
 @Component({
@@ -18,47 +17,59 @@ export class InfographycsComponent implements OnInit {
 
 
 
-  constructor(private graphicService : GraphicsService,
-    private dataService : DataService) { }
+  constructor( private dataService: DataService ) { }
 
-jardinera : any[] = [];
+  data: any[] = [];
 
+  postObservables = [
+    this.dataService.filterDataByHandling('jardinera'),
+    this.dataService.filterDataByHandling('equipamientos'),
+    this.dataService.filterDataByHandling('coordinacion')
+  ];
   ngOnInit(): void {
-  
+
     // this.graphicService.getUser()
     // .subscribe(({ labels, datasets }) => {
     //   // console.log(data);
     //   this.doughnutChartData = { labels, datasets };
     // });
 
+    this.dataService.getData()
+      .subscribe((data: any) => {
 
-    this.dataService.filterDataByHandling('jardinera')
-    .subscribe((data : any) => {
-      this.jardinera = data;
+      })
+
+    forkJoin(this.postObservables).subscribe((data: any) => {
+      this.data = data;
+      this.doughnutChartData = { labels: ['jardinera', 'equipamientos', 'coordinacion'], datasets: [{ data: [this.data[0].length, this.data[1].length, this.data[2].length], backgroundColor: ['#FFCC00', '#4D4D4D', '#000'] }] };
+      console.log(data);
     })
-   
+
+
   }
-// Doughnut
+  // Doughnut
 
-doughnutChartData: ChartData<'doughnut'> = {
+  doughnutChartData: ChartData<'doughnut'> = {
 
-  labels: [],
-  datasets: [
-    { data: [],
-      backgroundColor : ['#6405F0','#0724E3', '#05A0F0'] },
-    
-  ]
-};
-public doughnutChartType: ChartType = 'doughnut';
+    labels: [],
+    datasets: [
+      {
+        data: [],
+        backgroundColor: ['#6405F0', '#0724E3', '#05A0F0']
+      },
 
-// events
-public chartClicked({ event, active }: { event: ChartEvent, active: {}[] }): void {
-  console.log(event, active);
-}
+    ]
+  };
+  public doughnutChartType: ChartType = 'doughnut';
 
-public chartHovered({ event, active }: { event: ChartEvent, active: {}[] }): void {
-  console.log(event, active);
-}
+  // events
+  public chartClicked({ event, active }: { event: ChartEvent, active: {}[] }): void {
+    console.log(event, active);
+  }
+
+  public chartHovered({ event, active }: { event: ChartEvent, active: {}[] }): void {
+    console.log(event, active);
+  }
 
 
 
