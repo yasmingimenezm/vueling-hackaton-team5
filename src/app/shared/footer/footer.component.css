@@ -5,10 +5,11 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     font-size: small;
+
 }
 
 .team-name {
