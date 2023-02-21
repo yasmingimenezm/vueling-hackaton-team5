@@ -9,6 +9,7 @@
         <div class="card-body">
 
 
+
           <form [formGroup]="loginForm" (ngSubmit)="login()">
 
             <div class="form-group">
@@ -21,13 +22,16 @@
             <div class="form-group">
               <label for="password">Password</label>
               <input required="" name="password" id="password" type="password" formControlName="password" placeholder="password">
+
             </div>
             <span class="form-text text-danger mt-0 mb-0" *ngIf="required('password')">Please enter a valid
               password</span>
             <br>
 
+
             <div class="form-group pb-2">
               <button class="login-button" type="submit" (click)="login()">Login</button>
+
             </div>
           </form>
 
