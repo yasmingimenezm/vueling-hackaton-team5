@@ -1,9 +1,7 @@
 <div class="table-container">
-
   <a href="#form-section" class="btn btn-secondary" type="submit">
     Edit data
   </a>
-
   <div class="button-container">
     <button (click)="orderByCost('asc')" type="button" class="btn btn-outline-dark">Order by cost (asc)</button>
     <button (click)="orderByCost('desc')" type="button" class="btn btn-outline-dark">Order by cost (desc)</button>
@@ -11,7 +9,6 @@
     <button (click)="orderByHandling('equipamientos')" type="button" class="btn btn-outline-warning">EQUIPAMIENTOS</button>
     <button (click)="orderByHandling('coordinacion')" type="button" class="btn btn-outline-warning">COORDINACION</button>
   </div>
-
   <table class="table" *ngIf="(defaultData$ | async) as dataTable">
     <thead>
       <tr>
@@ -40,11 +37,16 @@
       </tr>
     </tbody>
   </table>
+
+<br>
+<br>
   
+
   <app-infographycs></app-infographycs>
 
-  <p id="form-section">HOLA! Esto será el form para editar la data si se es admin :)</p>
+  <p id="form-section fw-bold">Edit Form</p>
+
   <app-input-data class="inputs"></app-input-data>
-  
+
 
 </div>

@@ -12,7 +12,7 @@
           <a class="nav-link active" aria-current="page" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [ngClass]="{'disabled': !userLogged}">Datatable</a>
+          <a class="nav-link" [ngClass]="{'disabled': !userLogged}" routerLink="/datatable">Datatable</a>
         </li>
       </ul>
     <p class="username" *ngIf="userLogged">
