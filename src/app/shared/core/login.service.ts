@@ -64,23 +64,13 @@ export class LoginService {
   }
 
   setInfoStorage(resp: any){
-    localStorage.setItem('token', resp.token!)
+    localStorage.setItem('x-token', resp.token!)
 
           this._usuario = {
-            name : resp.name!,
-            uid  : resp._id!,
             userName: resp.userName,
             rol  : resp.rol!,
           }
   }
 
-
-  loginLogout():boolean{
-
-    if(localStorage.getItem('token')){
-      this.loginHeader = true;
-    } else {this.loginHeader = false}
-    return this.loginHeader
-  }
 
 }

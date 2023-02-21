@@ -13,9 +13,9 @@
           <form [formGroup]="loginForm" (ngSubmit)="login()">
 
             <div class="form-group">
-              <label for="username">Username</label>
-              <input required=""  name="username" id="username" type="text" formControlName="username" placeholder="username">
-              <span class="form-text text-danger mt-0 mb-0" *ngIf="required('username')">Please enter a valid
+              <label for="userName">Username</label>
+              <input required=""  name="username" id="username" type="text" formControlName="userName" placeholder="username">
+              <span class="form-text text-danger mt-0 mb-0" *ngIf="required('userName')">Please enter a valid
                 username</span>
             </div>
 

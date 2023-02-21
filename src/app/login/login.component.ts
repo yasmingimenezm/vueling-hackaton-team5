@@ -23,7 +23,7 @@ error : string = "";
 
 
 loginForm: FormGroup = this.fb.group({
-  username: ['', [Validators.required]],
+  userName: ['', [Validators.required]],
   password: ['', [Validators.required]]
 })
 
