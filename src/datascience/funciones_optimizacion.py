@@ -21,11 +21,35 @@ def driver(df, json_input):
             final_df = pd.concat([final_df, df_partial], axis=0)
     return final_df
 
-def calcular_coste(df, date, handling_function, part_time_cost, full_time_cost, part_time_hours, full_time_hours):
-    shift_morning_init = datetime.time(6, 0)
-    shift_morning_end = datetime.time(14, 59)
-    shift_afternoon_init = datetime.time(15, 0)
-    shift_afternoon_end = datetime.time(23, 59)
+
+def calcular_coste(df, date, handling_function, part_time_cost, full_time_cost,
+                   part_time_hours, full_time_hours):
+    working_hours_before_break = 4
+    break_hour = 1
+    working_hours_before_break_dt = datetime.timedelta(hours=working_hours_before_break)
+    break_hour_dt = datetime.timedelta(hours=break_hour)
+
+    time_morning_start = '06:00'
+    time_morning_end = '14:59'
+    time_afternoon_start = '15:00'
+    time_afternoon_end = '23:59'
+
+    shift_morning_init = datetime.datetime.strptime(time_morning_start, '%H:%M')
+    shift_morning_end = datetime.datetime.strptime(time_morning_end, '%H:%M')
+    shift_afternoon_init = datetime.datetime.strptime(time_afternoon_start, '%H:%M')
+    shift_afternoon_end = datetime.datetime.strptime(time_afternoon_end, '%H:%M')
+
+    break_morning_init = (shift_morning_init + working_hours_before_break_dt).time()
+    break_morning_end = (shift_morning_init + working_hours_before_break_dt + break_hour_dt - datetime.timedelta(
+      seconds=break_hour)).time()
+    break_afternoon_init = (shift_afternoon_init + working_hours_before_break_dt).time()
+    break_afternoon_end = (shift_afternoon_init + working_hours_before_break_dt + break_hour_dt - datetime.timedelta(
+      seconds=break_hour)).time()
+
+    shift_morning_init = shift_morning_init.time()
+    shift_morning_end = shift_morning_end.time()
+    shift_afternoon_init = shift_afternoon_init.time()
+    shift_afternoon_end = shift_afternoon_end.time()
     date = str(date)
     min_worker_required = 1
     # Filtramos el dataframe por fecha y handling_function
@@ -57,8 +81,12 @@ def calcular_coste(df, date, handling_function, part_time_cost, full_time_cost, 
     # Dividimos turnos de mañana y de tarde
     interval.loc[interval.shift_time_init.dt.time.between(shift_morning_init, shift_morning_end,
                                                           inclusive={"neither"}), 'morning_shift'] = 1
+    interval.loc[interval.shift_time_init.dt.time.between(break_morning_init, break_morning_end,
+                                                          inclusive={"neither"}), 'morning_shift'] = 0
     interval.loc[interval.shift_time_init.dt.time.between(shift_afternoon_init, shift_afternoon_end,
                                                           inclusive={"neither"}), 'afternoon_shift'] = 1
+    interval.loc[interval.shift_time_init.dt.time.between(break_afternoon_init, break_afternoon_end,
+                                                          inclusive={"neither"}), 'afternoon_shift'] = 0
     # require_part_time_shift
     require_part_time_shift = interval.shape[0]
 
