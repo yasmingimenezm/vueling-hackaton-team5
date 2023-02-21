@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { DataService } from './../shared/core/data.service';
 import { Component, OnInit } from '@angular/core';
 import { IData } from '../shared/models/data.model';
@@ -8,20 +9,20 @@ import { IData } from '../shared/models/data.model';
   styleUrls: ['./datatable.component.css']
 })
 export class DatatableComponent implements OnInit{
-  public defaultData?: IData[];
+  public defaultData$?: Observable<IData[]>;
 
   constructor(private data: DataService){}
 
   ngOnInit(): void {
-    this.defaultData = this.data.getData();
+    this.defaultData$ = this.data.getData();
   }
 
   orderByHandling(handling: string){
-    this.defaultData = this.data.orderDataByHandling(handling);
+    this.defaultData$ = this.data.filterDataByHandling(handling);
   }
 
-  orderByCost(order: string){
-    this.defaultData = this.data.orderDataByCost(order);
+  orderByCost(handling: string){
+    this.defaultData$ = this.data.orderDataByCost(handling);
   }
 
 

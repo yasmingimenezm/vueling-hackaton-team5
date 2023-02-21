@@ -1,0 +1,134 @@
+[
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "JARDINERA",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 1400
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "EQUIPAMIENTOS",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 1200
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 1000
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "JARDINERA",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 900
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "EQUIPAMIENTOS",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 800
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 700
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "JARDINERA",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 600
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "EQUIPAMIENTOS",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 500
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 400
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "JARDINERA",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 300
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "EQUIPAMIENTOS",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 200
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 100
+    }
+] 

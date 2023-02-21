@@ -1,0 +1,102 @@
+[
+    {
+      "request": {
+        "url": "^/startStubby$",
+        "method": "HEAD"
+      },
+      "response": {
+        "status": 200
+      }
+    },
+    {
+      "request": {
+        "url": "[\\s\\S]*",
+        "method": "OPTIONS"
+      },
+      "response": {
+        "headers": {
+          "Allow": "OPTIONS, GET, HEAD, POST, DELETE"
+        }
+      }
+    },
+    {
+      "request": {
+        "url": "^/getData",
+        "method": "GET"
+      },
+      "response": {
+        "status": 200,
+        "file": "../stubbs/api/get-data.json"
+      }
+    },
+    {
+        "request": {
+            "url": "^/filterDataByHandling/jardinera",
+            "method": "GET"
+        },
+        "response": {
+            "status": 200,
+            "file": "../stubbs/api/filter-handling-jardinera.json"
+        }
+    },
+    {
+        "request": {
+        "url": "^/filterDataByHandling/equipamientos",
+        "method": "GET"
+        },
+        "response": {
+        "status": 200,
+        "file": "../stubbs/api/filter-handling-equipamientos.json"
+        }
+    },
+    {
+        "request": {
+            "url": "^/filterDataByHandling/coordinacion",
+            "method": "GET"
+        },
+        "response": {
+            "status": 200,
+            "file": "../stubbs/api/filter-handling-coordinacion.json"
+        }
+    },
+    {
+        "request": {
+            "url": "^/orderDataByCost/asc",
+            "method": "GET"
+        },
+        "response": {
+            "status": 200,
+            "file": "../stubbs/api/order-data-asc.json"
+        }
+    },
+    {
+        "request": {
+            "url": "^/orderDataByCost/desc",
+            "method": "GET"
+        },
+        "response": {
+            "status": 200,
+            "file": "../stubbs/api/order-data-desc.json"
+        }
+    },
+    {
+        "request": {
+            "url": "^/userAuth/admin",
+            "method": "GET"
+        },
+        "response": {
+            "status": 200,
+            "file": "../stubbs/api/user-auth-admin.json"
+        }
+    },
+    {
+        "request": {
+            "url": "^/userAuth/userbase",
+            "method": "GET"
+        },
+        "response": {
+            "status": 200,
+            "file": "../stubbs/api/user-auth-userbase.json"
+        }
+    }
+  ]
