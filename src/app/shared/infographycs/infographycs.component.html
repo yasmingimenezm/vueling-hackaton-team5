@@ -1,0 +1,14 @@
+<div class="alert alert-info" *ngIf="doughnutChartData.datasets[0].data.length === 0; else divGraphic">
+    loading data...
+</div>
+
+<div class="row" >
+    <div class="col">
+        <ng-template class="col" #divGraphic>
+            <canvas baseChart class="chart"
+                    [data]="doughnutChartData"
+                    [type]="doughnutChartType">
+            </canvas>
+        </ng-template>
+    </div>
+</div>

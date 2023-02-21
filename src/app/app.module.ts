@@ -18,7 +18,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { InputDataComponent } from './shared/input-data/input-data.component';
 
-import Swal from 'sweetalert2'
+import { NgChartsModule } from 'ng2-charts';
+import { InfographycsComponent } from './shared/infographycs/infographycs.component'
 
 
 
@@ -34,6 +35,7 @@ import Swal from 'sweetalert2'
     HomeComponent,
     ErrorComponent,
     InputDataComponent,
+    InfographycsComponent,
 
 
 
@@ -42,7 +44,8 @@ import Swal from 'sweetalert2'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
