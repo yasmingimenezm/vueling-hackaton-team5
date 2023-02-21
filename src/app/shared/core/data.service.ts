@@ -10,6 +10,11 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
+
+  sendDataInput(data :any ){
+    return this.http.post('url ', data)
+  }
+
   userAuth(user: string, password: string): IUser/* Observable<IUser> */ {
     if (user === 'admin') {
       return {

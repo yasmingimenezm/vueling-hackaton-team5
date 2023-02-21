@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { DataService } from '../core/data.service';
 
 @Component({
   selector: 'app-input-data',
@@ -8,7 +9,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class InputDataComponent {
 
-  constructor( private fb: FormBuilder) { }
+  constructor( private fb: FormBuilder,
+    private dataService : DataService) { }
 
   dataForm = this.fb.group({
     shiftDuration: ['', Validators.required],
@@ -17,7 +19,7 @@ export class InputDataComponent {
   })
 
   dataInput() {
-    console.log(this.dataForm.value);
+    this.dataService.sendDataInput(this.dataForm.value);
   }
 
 }
