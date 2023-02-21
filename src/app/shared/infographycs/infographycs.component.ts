@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { ChartData, ChartEvent, ChartType } from 'chart.js';
 import { GraphicsService } from './graphics.service';
 import { DataService } from '../core/data.service';
-import { from, groupBy, map, mergeMap, reduce, take, toArray } from 'rxjs';
+import { filter, from, groupBy, map, mergeMap, reduce, take, toArray } from 'rxjs';
 import { dataTable } from '../interfaces';
 
 
@@ -21,7 +21,7 @@ export class InfographycsComponent implements OnInit {
   constructor(private graphicService : GraphicsService,
     private dataService : DataService) { }
 
-jardinera : dataTable[] = [];
+jardinera : any[] = [];
 
   ngOnInit(): void {
   
@@ -32,11 +32,10 @@ jardinera : dataTable[] = [];
     // });
 
 
-    this.dataService.getData()
-
-    .pipe(
-      
-    )
+    this.dataService.filterDataByHandling('jardinera')
+    .subscribe((data : any) => {
+      this.jardinera = data;
+    })
    
   }
 // Doughnut

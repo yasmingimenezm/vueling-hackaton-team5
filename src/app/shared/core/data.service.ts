@@ -34,7 +34,6 @@ export class DataService {
 
   userAuth(user: string): any {
     return this.http.get(`${environment.apiUrl}userAuth/${user}`).pipe(take(1));
-
   }
 
   getData(): any {
@@ -42,6 +41,7 @@ export class DataService {
   }
 
   filterDataByHandling(handling: string): any {
+    console.log(handling);
     return this.http.get(`${environment.apiUrl}filterDataByHandling/${handling}`).pipe(take(1));
   }
 
