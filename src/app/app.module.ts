@@ -15,6 +15,7 @@ import { HomeComponent } from './home/home/home.component';
 import { ErrorComponent } from './shared/error/error.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +25,8 @@ import { ErrorComponent } from './shared/error/error.component';
     FooterComponent,
     DatatableComponent,
     HomeComponent,
-    ErrorComponent
+    ErrorComponent,
+
 
   ],
   imports: [
