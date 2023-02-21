@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './home/home/home.component';
 import { ErrorComponent } from './shared/error/error.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -33,7 +34,8 @@ import { ErrorComponent } from './shared/error/error.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
