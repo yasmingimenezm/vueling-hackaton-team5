@@ -10,6 +10,7 @@ import { SpinnerComponent } from './shared/spinner/spinner.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { DatatableComponent } from './datatable/datatable.component';
+import { HttpClientModule } from '@angular/common/http';
 
 import { HomeComponent } from './home/home/home.component';
 import { ErrorComponent } from './shared/error/error.component';
@@ -31,7 +32,8 @@ import { ErrorComponent } from './shared/error/error.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
