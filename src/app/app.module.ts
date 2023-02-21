@@ -32,6 +32,7 @@ import { InputDataComponent } from './shared/input-data/input-data.component';
     InputDataComponent,
 
 
+
   ],
   imports: [
     BrowserModule,
