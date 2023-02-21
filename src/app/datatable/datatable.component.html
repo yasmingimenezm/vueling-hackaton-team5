@@ -1,73 +1,48 @@
 <div class="table-container">
-
-
   <a href="#form-section" class="btn btn-secondary" type="submit">
     Edit data
   </a>
-  <p></p>
-  
   <div class="button-container">
     <button (click)="orderByCost('asc')" type="button" class="btn btn-outline-dark">Order by cost (asc)</button>
-    &nbsp;
     <button (click)="orderByCost('desc')" type="button" class="btn btn-outline-dark">Order by cost (desc)</button>
-    &nbsp;
     <button (click)="orderByHandling('jardinera')" type="button" class="btn btn-outline-warning">JARDINERA</button>
-    &nbsp;
     <button (click)="orderByHandling('equipamientos')" type="button" class="btn btn-outline-warning">EQUIPAMIENTOS</button>
-    &nbsp;
     <button (click)="orderByHandling('coordinacion')" type="button" class="btn btn-outline-warning">COORDINACION</button>
+  </div>
+  <table class="table" *ngIf="(defaultData$ | async) as dataTable">
+    <thead>
+      <tr>
+        <th scope="col">Day</th>
+        <th scope="col">Hour</th>
+        <th scope="col">Handling function</th>
+        <th scope="col">Full-time Employees</th>
+        <th scope="col">Part-time Employees</th>
+        <th scope="col">Total Employees</th>
+        <th scope="col">Full-time Employees cost</th>
+        <th scope="col">Part-time Employees cost</th>
+        <th scope="col">Total cost</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let data of dataTable">
+        <td>{{data.day}}</td>
+        <td>{{data.hour}}</td>
+        <td>{{data.handling_function}}</td>
+        <td>{{data.full_time}}</td>
+        <td>{{data.part_time}}</td>
+        <td>{{data.total_employees}}</td>
+        <td>{{data.full_time_cost}}</td>
+        <td>{{data.part_time_cost}}</td>
+        <td>{{data.total_cost}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<br>
+<br>
   
-  <div class="button-container">
-    <div class="left-buttons">
-      <div class="cost-filters">
-        <button (click)="orderByCost('asc')" type="button" class="btn btn-outline-dark">Order by cost (asc)</button>
-        <button (click)="orderByCost('desc')" type="button" class="btn btn-outline-dark">Order by cost (desc)</button>
-      </div>
-      <div class="handling-filters">
-        <button (click)="orderByHandling('jardinera')" type="button" class="btn btn-outline-warning">JARDINERA</button>
-        <button (click)="orderByHandling('equipamientos')" type="button" class="btn btn-outline-warning">EQUIPAMIENTOS</button>
-        <button (click)="orderByHandling('coordinacion')" type="button" class="btn btn-outline-warning">COORDINACION</button>
-      </div>
-    </div>
-    <div class="right-buttons">
-      <a href="#form-section" class="btn btn-secondary" type="submit">Edit data</a>
-      <a type="button" class="btn btn-success">Export excel</a>
-    </div>
-  </div>
-
-  <div class="data-container">
-    <table class="table" *ngIf="(defaultData$ | async) as dataTable">
-      <thead>
-        <tr>
-          <th scope="col">Day</th>
-          <th scope="col">Hour</th>
-          <th scope="col">Handling function</th>
-          <th scope="col">Full-time Employees</th>
-          <th scope="col">Part-time Employees</th>
-          <th scope="col">Total Employees</th>
-          <th scope="col">Full-time Employees cost</th>
-          <th scope="col">Part-time Employees cost</th>
-          <th scope="col">Total cost</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let data of dataTable">
-          <td>{{data.day}}</td>
-          <td>{{data.hour}}</td>
-          <td>{{data.handling_function}}</td>
-          <td>{{data.full_time}}</td>
-          <td>{{data.part_time}}</td>
-          <td>{{data.total_employees}}</td>
-          <td>{{data.full_time_cost}}</td>
-          <td>{{data.part_time_cost}}</td>
-          <td>{{data.total_cost}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <p id="form-section">HOLA! Esto será el form para editar la data si se es admin :)</p>
+  <p id="form-section fw-bold">Edit Form</p>
   <app-input-data class="inputs"></app-input-data>
-  
+
 
 </div>
