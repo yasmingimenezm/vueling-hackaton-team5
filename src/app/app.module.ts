@@ -15,7 +15,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home/home.component';
 import { ErrorComponent } from './shared/error/error.component';
 import { ReactiveFormsModule } from '@angular/forms';
+
 import { InputDataComponent } from './shared/input-data/input-data.component';
+
+import Swal from 'sweetalert2'
+
 
 
 

@@ -1,0 +1,81 @@
+[
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 2023
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 2023
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 340
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 2023
+    },
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 2023
+    }
+    ,
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 2023
+    }
+    ,
+    {
+        "day": "02/02/2023",
+        "hour": 6,
+        "handling_function": "COORDINACION",
+        "full_time": 1,
+        "part_time": 0,
+        "total_employees": 1,
+        "full_time_cost": 203,
+        "part_time_cost": 0,
+        "total_cost": 2023
+    }
+] 

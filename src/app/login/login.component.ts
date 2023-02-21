@@ -1,10 +1,8 @@
-
-
-
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/shared/core/login.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-login',
@@ -51,9 +49,22 @@ login(){
       
       if( ok === true ){
         this.router.navigateByUrl(`/${this.authservice.usuario.rol}`)
+        Swal.fire({
+          icon: 'success',
+          title: 'Welcome to Vueling',
+          showConfirmButton: false,
+          timer: 1500
+        })
       } else {
 
         this.error = ok;
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Something went wrong!',
+          showConfirmButton: false,
+          timer: 1500
+        })
         this.loginForm.markAllAsTouched()
       }
     })}
