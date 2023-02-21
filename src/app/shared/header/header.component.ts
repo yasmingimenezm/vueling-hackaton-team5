@@ -12,12 +12,6 @@ export class HeaderComponent {
 
   userLogin() {
     this.userLogged = true;
-    Swal.fire({
-      icon: 'success',
-      title: 'Welcome to Vueling',
-      showConfirmButton: false,
-      timer: 1500
-    })
   }
 
   userLogout() {
