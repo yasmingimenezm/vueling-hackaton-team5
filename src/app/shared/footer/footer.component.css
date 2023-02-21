@@ -1,10 +1,14 @@
 footer {
     background-color: var(--darkgray);
-    height: 100px;
+    height: 60px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: small;
 }
 
 .team-name {
