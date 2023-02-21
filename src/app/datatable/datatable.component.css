@@ -16,6 +16,10 @@ a {
     margin-top: 30px;
 }
 
+.inputs{
+    margin-bottom: 50px;
+}
+
 table {
     margin: 30px 0;
 }
@@ -23,3 +27,4 @@ table {
 thead {
     background-color: var(--yellow);
 }
+
