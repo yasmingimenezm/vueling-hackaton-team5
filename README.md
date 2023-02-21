@@ -27,3 +27,29 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+## Data Science Project
+### Install python libraries
+- Install pip
+- pip install -r requirements.txt
+
+### Start api with uvicorn
+- uvicorn main:app --reload
+- Send petition to:
+  - `http://127.0.0.1:8000/optimized`
+  ```json
+  {"JARDINERA": {
+          "part_time_cost": 7.5,
+          "full_time_cost": 6
+      },
+                  "COORDINADOR": {
+          "part_time_cost": 7.5,
+          "full_time_cost": 6
+      },
+                  "EQUIPAJES": {
+          "part_time_cost": 7.5,
+          "full_time_cost": 6
+      }
+    }
+  ```
