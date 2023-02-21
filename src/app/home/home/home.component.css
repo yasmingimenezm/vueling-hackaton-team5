@@ -1,0 +1,12 @@
+.right-plane {
+  background-color: var(--yellow);
+  height: 100dvh;
+  overflow: hidden;
+}
+
+@media(max-width: 992px) {
+  .right-plane {
+    position: absolute;
+    z-index: -9;
+  }
+}
