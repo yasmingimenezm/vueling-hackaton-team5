@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -6,16 +7,16 @@ import Swal from 'sweetalert2';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnChanges {
 
   public userLogged: boolean = false;
 
+  constructor(private router: Router){ }
+
   userLogin() {
-    this.userLogged = true;
   }
 
   userLogout() {
-    this.userLogged = false;
     Swal.fire({
       icon: 'success',
       title: 'Goodbye',
@@ -23,6 +24,13 @@ export class HeaderComponent {
       showConfirmButton: false,
       timer: 1500
     })
+  }
+
+  ngOnChanges(): void {
+    if(this.router.url === '/datatable') {
+      this.userLogged = true;
+      console.log('change!');
+    }    
   }
 
 }
