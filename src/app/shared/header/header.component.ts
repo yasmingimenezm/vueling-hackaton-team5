@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
 
+  public userLogged: boolean = false;
+
+  userLogin() {
+    this.userLogged = true;
+  }
+
+  userLogout() {
+    this.userLogged = false;
+  }
+
 }
