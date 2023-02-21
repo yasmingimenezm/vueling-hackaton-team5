@@ -22,7 +22,8 @@
       username
     </p>
     <button class="btn btn-secondary" type="submit">
-      <span *ngIf="!userLogged" (click)="userLogin()" routerLink="/login">Login</span>
+      <span *ngIf="!userLogged" (click)="userLogin()" 
+      routerLink="/login">Login</span>
       <span *ngIf="userLogged" (click)="userLogout()">Logout</span>
     </button>
     </div>
