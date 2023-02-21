@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home/home.component';
 import { ErrorComponent } from './shared/error/error.component';
 import { Json2csvComponent } from './shared/json2csv/json2csv.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import Swal from 'sweetalert2'
 
 
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-header',
@@ -15,6 +16,13 @@ export class HeaderComponent {
 
   userLogout() {
     this.userLogged = false;
+    Swal.fire({
+      icon: 'success',
+      title: 'Goodbye',
+      text: 'See you soon',
+      showConfirmButton: false,
+      timer: 1500
+    })
   }
 
 }
