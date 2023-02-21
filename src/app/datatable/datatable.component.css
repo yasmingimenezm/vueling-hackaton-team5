@@ -1,0 +1,25 @@
+.table-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.dropdown {
+    margin-top: 30px;
+}
+
+table {
+    margin: 30px 0;
+}
+
+thead {
+    background-color: var(--yellow);
+}
