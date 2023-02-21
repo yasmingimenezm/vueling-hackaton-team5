@@ -1,1 +1,30 @@
-<p>header works!</p>
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand">
+      <img src="../../../assets/vy-logo.png" alt="">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [ngClass]="{'disabled': !userLogged}">Datatable</a>
+        </li>
+      </ul>
+    <p class="username" *ngIf="userLogged">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+      </svg>
+      username
+    </p>
+    <button class="btn btn-secondary" type="submit">
+      <span *ngIf="!userLogged" (click)="userLogin()">Login</span>
+      <span *ngIf="userLogged" (click)="userLogout()">Logout</span>
+    </button>
+    </div>
+  </div>
+</nav>
