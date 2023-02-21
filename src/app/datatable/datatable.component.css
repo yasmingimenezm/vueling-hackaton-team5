@@ -7,19 +7,88 @@
     align-items: center;
 }
 
-a {
+.button-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
     margin-top: 40px;
-    text-align: center;
 }
 
-.dropdown {
-    margin-top: 30px;
+.left-buttons div button{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: var(--semiBold);
+    margin-right: 5px;
+}
+
+.left-buttons .cost-filters{
+    margin-bottom: 5px;
+}
+
+.right-buttons a{
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: var(--semiBold);
+    margin-right: 5px;
+}
+
+.data-container {
+    width: 100%;
+    overflow-x: auto;
 }
 
 table {
-    margin: 30px 0;
+    margin: 30px 0 0 0;
 }
+
 
 thead {
     background-color: var(--yellow);
+}
+
+@media (max-width: 992px) {
+
+    .table-container {
+        width: 95%;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .left-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .handling-filters {
+        margin-bottom: 10px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 680px) {
+
+    table {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 580px) {
+
+    table {
+        font-size: 9px;
+    }
 }
