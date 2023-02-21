@@ -12,21 +12,21 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { DatatableComponent } from './datatable/datatable.component';
 
 import { HomeComponent } from './home/home/home.component';
+import { ErrorComponent } from './shared/error/error.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-
-
     LoginComponent,
     SpinnerComponent,
     HeaderComponent,
     FooterComponent,
+    DatatableComponent,
+    HomeComponent,
+    ErrorComponent,
 
-    DatatableComponent,
-    DatatableComponent,
-    HomeComponent
 
   ],
   imports: [
