@@ -17,20 +17,6 @@ export class DataService {
     return this.http.post('url ', data)
   }
 
-  // userAuth1(user: string, password: string): IUser/* Observable<IUser> */ {
-  //   if (user === 'admin') {
-  //     return {
-  //       user: 'admin',
-  //       role: 'admin',
-  //       token: '1234567890'
-  //     }
-  //   } else {
-  //     return {
-  //       user: 'userexample',
-  //       role: 'user',
-  //       token: '1234567890'
-  //     }
-  //   }
 
   userAuth(user: string): any {
     return this.http.get(`${environment.apiUrl}userAuth/${user}`).pipe(take(1));
