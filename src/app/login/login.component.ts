@@ -10,9 +10,9 @@ import Swal from 'sweetalert2'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  email: string = 'admin';
+  password: string = 'admin';
 error : string = "";
-
 
 
   constructor( private router: Router,
