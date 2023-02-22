@@ -9,7 +9,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page"  routerLink="/home" [ngClass]="{'disabled': userLogged}">Home</a>
         </li>
       </ul>
     <p class="username" *ngIf="userLogged">
@@ -18,9 +18,9 @@
       </svg>
       admin
     </p>
-    <button class="btn btn-secondary" type="submit" (click)="userLogin()" 
+    <button class="btn btn-secondary" type="submit"
     routerLink="/login">
-      <span *ngIf="!userLogged">Login</span>
+      <span *ngIf="!userLogged" (click)="userLogin()">Login</span>
       <span *ngIf="userLogged" (click)="userLogout()">Logout</span>
     </button>
     </div>
