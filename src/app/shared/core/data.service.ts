@@ -2,7 +2,6 @@ import { environment } from '../../../../environments/environment';
 import { Injectable } from '@angular/core';
 import { take } from 'rxjs';
 import { HttpClient } from "@angular/common/http";
-import { IUser } from '../models/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,12 +10,9 @@ export class DataService {
 
   constructor(private http: HttpClient) { }
 
-
-
   sendDataInput(data :any ){
     return this.http.post('url ', data)
   }
-
 
   userAuth(user: string): any {
     return this.http.get(`${environment.apiUrl}userAuth/${user}`).pipe(take(1));
@@ -27,7 +23,6 @@ export class DataService {
   }
 
   filterDataByHandling(handling: string): any {
-    console.log(handling);
     return this.http.get(`${environment.apiUrl}filterDataByHandling/${handling}`).pipe(take(1));
   }
 

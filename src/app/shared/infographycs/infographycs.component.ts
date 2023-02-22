@@ -42,7 +42,6 @@ export class InfographycsComponent implements OnInit {
     forkJoin(this.postObservables).subscribe((data: any) => {
       this.data = data;
       this.doughnutChartData = { labels: ['jardinera', 'equipamientos', 'coordinacion'], datasets: [{ data: [this.data[0].length, this.data[1].length, this.data[2].length], backgroundColor: ['#FFCC00', '#4D4D4D', '#000'] }] };
-      console.log(data);
     })
 
 

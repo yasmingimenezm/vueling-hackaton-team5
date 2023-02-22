@@ -26,6 +26,7 @@
     "chart.js": "^3.6.0",
     "concurrently": "^7.6.0",
     "ng2-charts": "^4.1.1",
+    "ngx-spinner": "^15.0.1",
     "rxjs": "^7.5.7",
     "stream-browserify": "^3.0.0",
     "stubby-options-header": "^4.1.2",

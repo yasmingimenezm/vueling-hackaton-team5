@@ -1,3 +1,4 @@
+import { ErrorComponent } from './shared/error/error.component';
 import { DatatableComponent } from './datatable/datatable.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -10,7 +11,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'datatable', component: DatatableComponent },
   { path: 'home', component: HomeComponent },
-  { path: '**', redirectTo: 'home'}
+  { path: '**', component: ErrorComponent }
 ];
 
 @NgModule({
