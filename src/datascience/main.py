@@ -1,5 +1,6 @@
 import pandas as pd
 import json
+import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 from funciones_optimizacion import calcular_coste, driver
@@ -25,3 +26,8 @@ async def create_item(item: Item):
     df = pd.read_csv("data/input-ground-handling-optimizer.csv", sep=";")
     final_df = driver(df, json_input)
     return json.loads(final_df.to_json(orient="records"))
+    
+print(__name__ )
+if __name__ == "__main__":
+    uvicorn.run(app, port=8000)
+
