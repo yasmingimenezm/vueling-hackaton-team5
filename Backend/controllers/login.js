@@ -13,7 +13,7 @@ const login = async (req, res) => {
         return invalidInput(req, res);
     }
     try {
-        const userFound = await User.findOne({ name: userName });
+        const userFound = await User.findOne({ where: {name: userName} });
 
         if (!userFound) {
             return res.status(401).json(new Response(401, { message: "Invalid username/password" }, "An error ocurred,", null))

@@ -88,6 +88,8 @@ npm install
 
 _In order for everything to work, we have to enable the environment variables. To do this, you have to create a file with the name `.env` and enter the data you have in the `.env-templates` file._
 
+_For testing proposes we created two users examples: one admin and one guest_
+
 ## Run the application
 
 _Once we have the programs and dependencies installed, run the following command in terminal:_ 
@@ -114,4 +116,5 @@ _We have created the database in MySQL with the entity-relationship model, in la
 * [mysql2](https://www.npmjs.com/package/mysql2) - MySQL client for Node.js with focus on performance. Supports prepared statements, non-utf8 encodings, binary log protocol, compression, ssl much more.
 * [sequelize](https://www.npmjs.com/package/sequelize) - Sequelize is an easy-to-use and promise-based Node.js ORM tool for Postgres, MySQL, MariaDB, SQLite, DB2, Microsoft SQL Server, and Snowflake. It features solid transaction support, relations, eager and lazy loading, read replication and more.
 * [cors](https://www.npmjs.com/package/cors) - CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
-* [JWT](https://www.npmjs.com/package/jsonwebtoken) - JSON Web Token (JWT) is a compact URL-safe means of representing claims to be transferred between two parties. 
+* [JWT](https://www.npmjs.com/package/jsonwebtoken) - JSON Web Token (JWT) is a compact URL-safe means of representing claims to be transferred between two parties.
+* [bcrypt](https://www.npmjs.com/package/bcrypt) - To safely hash the recieved password by the users.
