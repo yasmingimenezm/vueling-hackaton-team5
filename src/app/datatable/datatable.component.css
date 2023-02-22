@@ -39,10 +39,6 @@
     overflow-x: auto;
 }
 
-.inputs{
-    margin-bottom: 50px;
-}
-
 table {
     margin: 30px 0 0 0;
 }
@@ -51,6 +47,11 @@ table {
 thead {
     background-color: var(--yellow);
 }
+
+h3 {
+    margin: 30px 0 20px 0;
+}
+
 
 @media (max-width: 992px) {
 

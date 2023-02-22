@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck, OnChanges, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -6,23 +7,44 @@ import Swal from 'sweetalert2';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit, DoCheck {
 
+  public token!: string | null;
   public userLogged: boolean = false;
 
+  constructor(private router: Router){ }
+
+  ngOnInit(): void {
+    this.tokenExists();
+  }
+
   userLogin() {
-    this.userLogged = true;
+    this.tokenExists();
   }
 
   userLogout() {
-    this.userLogged = false;
     Swal.fire({
       icon: 'success',
       title: 'Goodbye',
       text: 'See you soon',
       showConfirmButton: false,
       timer: 1500
-    })
+    });
+    localStorage.removeItem('token');
+    this.tokenExists();
+  }
+
+  tokenExists(){
+    this.token = localStorage.getItem('token');
+    if(this.token){
+      this.userLogged = true;
+    } else {
+      this.userLogged = false;
+    }
+  }
+  
+  ngDoCheck(): void {
+    this.tokenExists();
   }
 
 }
