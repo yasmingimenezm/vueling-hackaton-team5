@@ -4,7 +4,7 @@ const { serverError } = require('./errorHandler');
 
 const apiDataScience = `http://localhost:${process.env.DATASCIENCE_PORT}/put`
 
-const postGO = async (req, res) => {
+/* const postGO = async (req, res) => {
     try {
         const data = await fetch(`${apiDataScience}/results`, {
             method: 'GET',
@@ -13,7 +13,7 @@ const postGO = async (req, res) => {
         await GroundOperation.bulkCreate(data)
         return res.status(201).json(new Response(201, null, null, null))
     } catch (err) { return serverError(req, res, err); }
-}
+} */
 
 const putGOInput = async (req, res) => {
     let defaulValue = {
@@ -59,4 +59,4 @@ const getDay = async (req, res) => {
 }
 
 
-module.exports = { postGO, putGOInput, getDay }
+module.exports = { putGOInput, getDay }
