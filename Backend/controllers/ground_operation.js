@@ -16,18 +16,20 @@ const postGO = async (req, res) => {
 }
 
 const putGOInput = async (req, res) => {
-    //const salary = req.body.salary
+    let defaulValue = {
+        'JARDINERA': { part_time_cost: 7.5, full_time_cost: 6 },
+        'EQUIPAJES': { part_time_cost: 7, full_time_cost: 7.25 },
+        'COORDINACION': { part_time_cost: 8.5, full_time_cost: 10 }
+    }
     try {
         const DSResponse = await fetch(`${apiDataScience}/optimized`, {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                'JARDINERA': {part_time_cost: 7.5, full_time_cost: 6},
-                'EQUIPAJES': {part_time_cost: 7, full_time_cost: 7.25},
-                'COORDINACION': {part_time_cost: 8.5, full_time_cost: 10}
-            })
+            body: JSON.stringify(defaulValue)
         })
-        return res.status(200).json(new Response(200, null, "ok", null))
+        const dataJSON = await JSON.parse(DSResponse);
+        await GroundOperation.bulkCreate(data)
+        return res.status(201).json(new Response(201, null, "Data Generated", dataJSON))
     } catch (err) { return serverError(req, res, err); }
 }
 
